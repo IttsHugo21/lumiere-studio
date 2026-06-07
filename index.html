@@ -404,6 +404,20 @@
   /* TESTIMONIAL stars */
   .pl-stars{color:var(--gold);letter-spacing:4px;font-size:.78rem;margin-bottom:18px}
 
+  /* BIO */
+  #bio{position:relative;background:var(--noir-2)}
+  .bio-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(40px,7vw,90px);align-items:center}
+  @media(max-width:920px){.bio-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+  .bio-photo-wrap{position:relative}
+  .bio-photo-wrap::before{content:'';position:absolute;inset:20px -20px -20px 20px;border:1px solid var(--gold);opacity:.35;z-index:0}
+  .bio-photo{position:relative;z-index:1;width:100%;display:block;aspect-ratio:3/4;object-fit:cover;
+    border:1px solid var(--line);filter:grayscale(.12) contrast(1.03);
+    background:linear-gradient(160deg,#1a1510,#0a0807)}
+  .bio-chip{position:absolute;z-index:2;left:-18px;bottom:34px;background:var(--gold);color:var(--noir);
+    padding:13px 20px;font-family:var(--display);font-style:italic;font-size:1.02rem;box-shadow:0 16px 30px rgba(0,0,0,.4)}
+  @media(max-width:920px){.bio-chip{left:0}}
+  .bio-sign{margin-top:34px;font-family:var(--display);font-style:italic;font-size:1.6rem;color:var(--gold-light)}
+
   /* CTA → WhatsApp form */
   .cta-form{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:14px;text-align:left;position:relative;z-index:1}
   .cf-row{display:flex;gap:14px}
@@ -516,6 +530,24 @@
       <h2 class="h-display" style="margin-bottom:30px">Diseñamos webs que <em>enamoran</em> y convierten</h2>
       <p class="lead" style="margin-bottom:24px">Somos un estudio centrado en exclusiva en clínicas de belleza y medicina estética. Entendemos tu sector y, sobre todo, lo que tu paciente necesita ver para decidirse a pedir cita.</p>
       <p class="lead">Nada de plantillas. Cada web es un proyecto único, cuidado al detalle: desde la primera idea hasta la velocidad de carga final.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="wrap bio-grid">
+    <div class="bio-photo-wrap rv-l">
+      <img class="bio-photo" src="bio.jpg" alt="Hugo, diseñador y fundador de Lumière Studio">
+      <div class="bio-chip">Fundador &amp; diseñador</div>
+    </div>
+    <div class="rv-r">
+      <div class="eyebrow">Quién está detrás</div>
+      <h2 class="h-display" style="margin-bottom:30px">Detrás de Lumière hay <em>una persona</em>, no una agencia</h2>
+      <p class="lead" style="margin-bottom:24px">Soy Hugo, diseñador y fundador de Lumière Studio. Empecé a crear webs porque me obsesiona ese instante en el que una página bien hecha consigue que alguien confíe y dé el paso de pedir cita.</p>
+      <p class="lead" style="margin-bottom:24px">Decidí centrarme en exclusiva en clínicas de belleza y medicina estética: un sector donde la imagen lo es todo y, sin embargo, la mayoría de webs no están a la altura del trabajo que hay detrás.</p>
+      <p class="lead">Cuando trabajas conmigo, tratas directamente conmigo. Sin intermediarios, sin plantillas y sin prisas: cuido cada proyecto como si fuera el mío.</p>
+      <div class="bio-sign">— Hugo, Lumière Studio</div>
     </div>
   </div>
 </section>
