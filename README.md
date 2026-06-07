@@ -1,13 +1,13 @@
-# Lumière Studio
+# AETHER
 
 Landing page de lujo para un estudio de diseño web especializado en **clínicas de belleza y medicina estética**.
 
 ## ✨ Características
 
-- Diseño editorial premium (paleta dorado / negro / champagne, tipografías serif + sans).
+- Diseño editorial premium (paleta verde / negro, tipografías serif + sans).
 - Producto 3D en SVG con efecto de inclinación al mover el ratón.
 - Animaciones scroll-triggered (IntersectionObserver), parallax y contadores.
-- Secciones: hero, servicios, proceso, portfolio, beneficios, compromisos, precios y contacto.
+- Secciones: hero, sobre el estudio, bio, servicios, proceso, portfolio, beneficios, testimonios, precios y contacto.
 - Totalmente responsive y sin dependencias externas (un único `index.html`).
 
 ## 🚀 Uso

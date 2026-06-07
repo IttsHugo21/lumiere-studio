@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUMIÈRE STUDIO — Webs de lujo para clínicas de belleza</title>
+<title>AETHER — Webs de lujo para clínicas de belleza</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noir:#0A0807;
-    --noir-2:#100D0B;
-    --noir-3:#15110E;
-    --gold:#C9A96E;
-    --gold-light:#E8D5A3;
-    --gold-deep:#9A7B3E;
-    --champagne:#F3E7CC;
-    --cream:#FAF4E8;
-    --nude:#E7D3BE;
-    --muted:#8C7B68;
-    --line:rgba(201,169,110,0.16);
+    --noir:#08110D;
+    --noir-2:#0C1712;
+    --noir-3:#11201A;
+    --gold:#6BAF92;
+    --gold-light:#A8D5BE;
+    --gold-deep:#3E7A60;
+    --champagne:#DDEFE4;
+    --cream:#F2F8F4;
+    --nude:#CDE6D8;
+    --muted:#7E927F;
+    --line:rgba(107,175,146,0.16);
     --display:'Fraunces',serif;
     --sans:'Jost',sans-serif;
     --ease:cubic-bezier(0.19,1,0.22,1);
@@ -40,9 +40,9 @@
   .bg-mesh{
     position:fixed;inset:0;z-index:-2;pointer-events:none;
     background:
-      radial-gradient(60vw 60vw at 80% -10%, rgba(201,169,110,0.14), transparent 60%),
-      radial-gradient(50vw 50vw at -10% 30%, rgba(154,123,62,0.10), transparent 60%),
-      radial-gradient(45vw 45vw at 110% 80%, rgba(232,213,163,0.08), transparent 60%),
+      radial-gradient(60vw 60vw at 80% -10%, rgba(107,175,146,0.14), transparent 60%),
+      radial-gradient(50vw 50vw at -10% 30%, rgba(46,92,69,0.10), transparent 60%),
+      radial-gradient(45vw 45vw at 110% 80%, rgba(168,213,190,0.08), transparent 60%),
       var(--noir);
   }
   .grain{
@@ -105,7 +105,7 @@
   /* big ghost numeral behind sections */
   .ghost-num{
     position:absolute;font-family:var(--display);font-weight:300;font-style:italic;
-    font-size:clamp(10rem,26vw,24rem);line-height:.8;color:rgba(201,169,110,0.045);
+    font-size:clamp(10rem,26vw,24rem);line-height:.8;color:rgba(107,175,146,0.045);
     pointer-events:none;user-select:none;z-index:0;
   }
 
@@ -123,7 +123,7 @@
     font-size:clamp(3rem,7.4vw,6.6rem);margin-bottom:32px;
   }
   .hero-title em{font-style:italic;color:var(--gold-light);font-weight:400}
-  .hero-title .stroke{-webkit-text-stroke:1px rgba(201,169,110,.55);color:transparent}
+  .hero-title .stroke{-webkit-text-stroke:1px rgba(107,175,146,.55);color:transparent}
   .hero-sub{max-width:440px;margin-bottom:46px}
   .hero-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
 
@@ -135,23 +135,23 @@
   .btn-fill{background:var(--gold);color:var(--noir);padding:17px 38px;position:relative;overflow:hidden}
   .btn-fill span{position:relative;z-index:1}
   .btn-fill::after{content:'';position:absolute;inset:0;background:var(--gold-light);transform:translateY(101%);transition:transform .5s var(--ease)}
-  .btn-fill:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(201,169,110,.28)}
+  .btn-fill:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(107,175,146,.28)}
   .btn-fill:hover::after{transform:translateY(0)}
   .btn-ghost{color:var(--gold-light);padding:8px 0}
   .btn-ghost svg{transition:transform .4s var(--ease)}
   .btn-ghost:hover svg{transform:translateX(6px)}
   .btn-line{border:1px solid var(--gold);color:var(--gold);padding:16px 38px}
-  .btn-line:hover{background:rgba(201,169,110,.1);transform:translateY(-2px)}
+  .btn-line:hover{background:rgba(107,175,146,.1);transform:translateY(-2px)}
 
   /* hero product */
   .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;perspective:1200px;min-height:60vh}
   .hero-glow{position:absolute;width:340px;height:340px;border-radius:50%;
-    background:radial-gradient(circle,rgba(201,169,110,.20),rgba(201,169,110,.04) 52%,transparent 72%);
+    background:radial-gradient(circle,rgba(107,175,146,.20),rgba(107,175,146,.04) 52%,transparent 72%);
     filter:blur(16px);animation:pulse 6s ease-in-out infinite}
   .hero-product{position:relative;height:64vh;max-height:560px;width:auto;
     filter:drop-shadow(0 44px 56px rgba(0,0,0,.55));transform-style:preserve-3d;will-change:transform}
   @keyframes pulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.06);opacity:1}}
-  .hero-orbit{position:absolute;border:1px solid rgba(201,169,110,.14);border-radius:50%}
+  .hero-orbit{position:absolute;border:1px solid rgba(107,175,146,.14);border-radius:50%}
   .hero-orbit.o1{width:420px;height:420px;animation:spin 26s linear infinite}
   .hero-orbit.o2{width:540px;height:540px;border-style:dashed;animation:spin 40s linear infinite reverse}
   @keyframes spin{to{transform:rotate(360deg)}}
@@ -191,7 +191,7 @@
   .about-visual{position:relative;height:560px}
   @media(max-width:920px){.about-visual{height:440px}}
   .frame{position:absolute;border:1px solid var(--line);overflow:hidden}
-  .frame-main{inset:0 70px 70px 0;background:linear-gradient(150deg,rgba(201,169,110,.08),rgba(10,8,7,.4))}
+  .frame-main{inset:0 70px 70px 0;background:linear-gradient(150deg,rgba(107,175,146,.08),rgba(10,8,7,.4))}
   .frame-main .photo{position:absolute;inset:0;
     background:linear-gradient(to top,rgba(10,8,7,.94),rgba(10,8,7,.3) 55%,rgba(10,8,7,.55)),
       url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=75');
@@ -221,7 +221,7 @@
   .svc-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s var(--ease)}
   .svc:hover .svc-in{transform:rotateY(180deg)}
   .svc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--line);padding:38px;display:flex;flex-direction:column;justify-content:flex-end}
-  .svc-front{background:linear-gradient(165deg,rgba(201,169,110,.06),rgba(10,8,7,.6))}
+  .svc-front{background:linear-gradient(165deg,rgba(107,175,146,.06),rgba(10,8,7,.6))}
   .svc-front::before{content:'';position:absolute;top:0;left:0;width:2px;height:54px;background:var(--gold);transition:height .6s var(--ease)}
   .svc:hover .svc-front::before{height:100%}
   .svc-back{transform:rotateY(180deg);background:linear-gradient(165deg,var(--gold-light),var(--gold));justify-content:center;align-items:flex-start}
@@ -293,8 +293,8 @@
   .pl-slider{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;padding:8px 0 16px;margin-top:56px}
   .pl-slider::-webkit-scrollbar{display:none}
   .pl{min-width:400px;flex-shrink:0;border:1px solid var(--line);padding:44px 38px;position:relative;background:rgba(10,8,7,.4);transition:border-color .5s,transform .5s var(--ease)}
-  .pl:hover{border-color:rgba(201,169,110,.4);transform:translateY(-6px)}
-  .pl::before{content:'✦';position:absolute;top:30px;right:34px;color:rgba(201,169,110,.18);font-size:1.4rem}
+  .pl:hover{border-color:rgba(107,175,146,.4);transform:translateY(-6px)}
+  .pl::before{content:'✦';position:absolute;top:30px;right:34px;color:rgba(107,175,146,.18);font-size:1.4rem}
   .pl p{font-family:var(--display);font-weight:300;font-style:italic;font-size:1.18rem;line-height:1.6;color:rgba(250,244,232,.86);margin-bottom:32px}
   .pl-by{display:flex;align-items:center;gap:16px}
   .pl-av{width:48px;height:48px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;color:var(--gold);flex-shrink:0}
@@ -308,8 +308,8 @@
   .pr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:780px;margin:0 auto}
   @media(max-width:680px){.pr-grid{grid-template-columns:1fr}}
   .pr{border:1px solid var(--line);padding:48px 42px;position:relative;background:rgba(16,13,11,.5);transition:border-color .5s,transform .5s var(--ease)}
-  .pr:hover{border-color:rgba(201,169,110,.42);transform:translateY(-6px)}
-  .pr.feat{border-color:var(--gold);background:linear-gradient(165deg,rgba(201,169,110,.09),rgba(10,8,7,.85))}
+  .pr:hover{border-color:rgba(107,175,146,.42);transform:translateY(-6px)}
+  .pr.feat{border-color:var(--gold);background:linear-gradient(165deg,rgba(107,175,146,.09),rgba(10,8,7,.85))}
   .pr.feat::before{content:'Más popular';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--noir);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 20px}
   .pr-t{font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .pr-a{font-family:var(--display);font-weight:300;font-size:3.4rem;line-height:1;color:var(--cream)}
@@ -325,7 +325,7 @@
 
   /* ── CTA ── */
   #cta{text-align:center;position:relative;overflow:hidden;padding:clamp(110px,16vh,180px) 0}
-  #cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.08),transparent 68%);pointer-events:none}
+  #cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(107,175,146,.08),transparent 68%);pointer-events:none}
   .cta-tag{font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;position:relative;z-index:1}
   .cta-tag::before,.cta-tag::after{content:'';width:30px;height:1px;background:var(--gold)}
   .cta-title{position:relative;z-index:1;margin-bottom:24px}
@@ -378,10 +378,10 @@
   .svc-grid{grid-auto-rows:1fr}
   .svc-cta{
     position:relative;border:1px solid var(--gold);min-height:400px;
-    background:linear-gradient(165deg,rgba(201,169,110,.12),rgba(10,8,7,.6));
+    background:linear-gradient(165deg,rgba(107,175,146,.12),rgba(10,8,7,.6));
     padding:42px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
   }
-  .svc-cta::after{content:'✦';position:absolute;top:-30px;right:-10px;font-size:11rem;color:rgba(201,169,110,.06);font-family:var(--display)}
+  .svc-cta::after{content:'✦';position:absolute;top:-30px;right:-10px;font-size:11rem;color:rgba(107,175,146,.06);font-family:var(--display)}
   .svc-cta .sc-top{position:relative;z-index:1}
   .svc-cta .sc-i{font-family:var(--display);font-style:italic;font-size:.8rem;color:var(--gold-deep);letter-spacing:.1em;margin-bottom:14px}
   .svc-cta h3{font-family:var(--display);font-weight:300;font-size:1.9rem;line-height:1.1;margin-bottom:14px}
@@ -397,7 +397,7 @@
   .ben-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   @media(max-width:520px){.ben-cards{grid-template-columns:1fr}}
   .bcard{border:1px solid var(--line);background:rgba(16,13,11,.7);padding:28px;min-height:195px;display:flex;flex-direction:column;justify-content:center;transition:transform .45s var(--ease),border-color .45s}
-  .bcard:hover{transform:translateY(-5px);border-color:rgba(201,169,110,.42)}
+  .bcard:hover{transform:translateY(-5px);border-color:rgba(107,175,146,.42)}
   .bcard.gold{background:var(--gold);border-color:var(--gold)}
   .bcard.gold *{color:var(--noir) !important}
 
@@ -435,7 +435,7 @@
 </style>
 </head>
 <body>
-<!-- Lumière Studio · versión v2 (editorial de lujo) -->
+<!-- AETHER · versión v2 (editorial de lujo) -->
 <div class="bg-mesh"></div>
 <div class="grain"></div>
 <div class="progress" id="progress"></div>
@@ -448,7 +448,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="logo">Lumi<i>è</i>re Studio</div>
+  <div class="logo">AE<i>T</i>HER</div>
   <ul class="nav-links">
     <li><a href="#bio"><span class="nav-num">01</span> Bio</a></li>
     <li><a href="#services"><span class="nav-num">02</span> Servicios</a></li>
@@ -468,7 +468,7 @@
       <div class="hero-actions">
         <a href="#portfolio" class="btn btn-fill"><span>Ver nuestro trabajo</span></a>
         <a href="#process" class="btn btn-ghost">Cómo trabajamos
-          <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="#E8D5A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="#A8D5BE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
@@ -478,9 +478,9 @@
       <div class="hero-glow"></div>
       <svg class="hero-product" id="heroProduct" viewBox="0 0 260 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frasco de sérum">
         <defs>
-          <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0DDA8"/><stop offset=".5" stop-color="#C9A96E"/><stop offset="1" stop-color="#8B6914"/></linearGradient>
-          <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a2a1c"/><stop offset=".45" stop-color="#7a5a34"/><stop offset=".55" stop-color="#9a743f"/><stop offset="1" stop-color="#2a1d12"/></linearGradient>
-          <linearGradient id="gLiq" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B8924E"/><stop offset=".5" stop-color="#E8D5A3"/><stop offset="1" stop-color="#9a743f"/></linearGradient>
+          <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C8E8D5"/><stop offset=".5" stop-color="#6BAF92"/><stop offset="1" stop-color="#2E5C45"/></linearGradient>
+          <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1F3329"/><stop offset=".45" stop-color="#3E5C4A"/><stop offset=".55" stop-color="#3E7A60"/><stop offset="1" stop-color="#16271E"/></linearGradient>
+          <linearGradient id="gLiq" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4E9C7E"/><stop offset=".5" stop-color="#A8D5BE"/><stop offset="1" stop-color="#3E7A60"/></linearGradient>
         </defs>
         <rect x="126" y="150" width="8" height="300" rx="4" fill="url(#gGold)" opacity=".55"/>
         <path d="M70 250 Q70 210 110 196 L110 168 L150 168 L150 196 Q190 210 190 250 L190 470 Q190 510 150 510 L110 510 Q70 510 70 470 Z" fill="url(#gGlass)"/>
@@ -539,16 +539,16 @@
 <section id="bio">
   <div class="wrap bio-grid">
     <div class="bio-photo-wrap rv-l">
-      <img class="bio-photo" src="bio.jpg" alt="Hugo, diseñador y fundador de Lumière Studio">
+      <img class="bio-photo" src="bio.jpg" alt="Hugo, diseñador y fundador de AETHER">
       <div class="bio-chip">Fundador &amp; diseñador</div>
     </div>
     <div class="rv-r">
       <div class="eyebrow">Quién está detrás</div>
-      <h2 class="h-display" style="margin-bottom:30px">Detrás de Lumière hay <em>una persona</em>, no una agencia</h2>
-      <p class="lead" style="margin-bottom:24px">Soy Hugo, diseñador y fundador de Lumière Studio. Empecé a crear webs porque me obsesiona ese instante en el que una página bien hecha consigue que alguien confíe y dé el paso de pedir cita.</p>
+      <h2 class="h-display" style="margin-bottom:30px">Detrás de AETHER hay <em>una persona</em>, no una agencia</h2>
+      <p class="lead" style="margin-bottom:24px">Soy Hugo, diseñador y fundador de AETHER. Empecé a crear webs porque me obsesiona ese instante en el que una página bien hecha consigue que alguien confíe y dé el paso de pedir cita.</p>
       <p class="lead" style="margin-bottom:24px">Decidí centrarme en exclusiva en clínicas de belleza y medicina estética: un sector donde la imagen lo es todo y, sin embargo, la mayoría de webs no están a la altura del trabajo que hay detrás.</p>
       <p class="lead">Cuando trabajas conmigo, tratas directamente conmigo. Sin intermediarios, sin plantillas y sin prisas: cuido cada proyecto como si fuera el mío.</p>
-      <div class="bio-sign">— Hugo, Lumière Studio</div>
+      <div class="bio-sign">— Hugo, AETHER</div>
     </div>
   </div>
 </section>
@@ -624,7 +624,7 @@
         <h2 class="h-display rv">Proyectos que <em>hablan</em><br>por sí solos</h2>
       </div>
       <a href="#portfolio" class="btn btn-ghost rv d1">Ver todos los proyectos
-        <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="#E8D5A3" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="#A8D5BE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
     <div class="pf-grid">
@@ -762,7 +762,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap ft">
-    <div class="logo">Lumi<i>è</i>re Studio</div>
+    <div class="logo">AE<i>T</i>HER</div>
     <div class="ft-c">
       <div class="ct">Contacto</div>
       <a href="https://wa.me/34640230147" target="_blank" rel="noopener">WhatsApp · 640 23 01 47</a>
