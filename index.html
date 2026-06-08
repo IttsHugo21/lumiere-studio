@@ -307,7 +307,9 @@
   .pr-head .eyebrow{justify-content:center}
   .pr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:780px;margin:0 auto}
   @media(max-width:680px){.pr-grid{grid-template-columns:1fr}}
-  .pr{border:1px solid var(--line);padding:48px 42px;position:relative;background:rgba(16,13,11,.5);transition:border-color .5s,transform .5s var(--ease)}
+  .pr{border:1px solid var(--line);padding:48px 42px;position:relative;background:rgba(16,13,11,.5);transition:border-color .5s,transform .5s var(--ease);display:flex;flex-direction:column}
+  .pr ul{flex:1}
+  .pr .btn{margin-top:32px}
   .pr:hover{border-color:rgba(201,169,110,.42);transform:translateY(-6px)}
   .pr.feat{border-color:var(--gold);background:linear-gradient(165deg,rgba(201,169,110,.09),rgba(10,8,7,.85))}
   .pr.feat::before{content:'Más popular';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--noir);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 20px}
