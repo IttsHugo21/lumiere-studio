@@ -356,6 +356,23 @@
   .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
   @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.rv,.rv-l,.rv-r{opacity:1;transform:none}}
 
+  /* ── COOKIE BANNER ── */
+  .ck-banner{
+    position:fixed;bottom:0;left:0;right:0;z-index:9999;
+    background:var(--noir-2);border-top:1px solid var(--line);
+    padding:22px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    transform:translateY(100%);transition:transform .5s var(--ease);
+  }
+  .ck-banner.visible{transform:translateY(0)}
+  .ck-banner p{font-size:.78rem;color:var(--muted);line-height:1.65;flex:1;min-width:220px}
+  .ck-banner p button{background:none;border:none;color:var(--gold-light);cursor:pointer;font-size:.78rem;text-decoration:underline;text-underline-offset:3px;padding:0;font-family:var(--sans)}
+  .ck-banner-btns{display:flex;gap:12px;flex-shrink:0}
+  .ck-accept{background:var(--gold);color:var(--noir);border:none;padding:11px 26px;font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:opacity .2s}
+  .ck-accept:hover{opacity:.85}
+  .ck-reject{background:none;border:1px solid var(--line);color:var(--muted);padding:11px 22px;font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:border-color .2s,color .2s}
+  .ck-reject:hover{border-color:var(--gold);color:var(--cream)}
+  @media(max-width:560px){.ck-banner{padding:18px 20px}.ck-banner-btns{width:100%}.ck-accept,.ck-reject{flex:1;text-align:center}}
+
   /* ── LEGAL MODALS ── */
   .legal-overlay{position:fixed;inset:0;z-index:9000;background:rgba(10,8,7,.88);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
   .legal-overlay.open{opacity:1;pointer-events:all}
@@ -849,6 +866,15 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 })();
 </script>
 
+<!-- COOKIE BANNER -->
+<div class="ck-banner" id="ckBanner" role="region" aria-label="Aviso de cookies">
+  <p>Usamos <strong style="color:var(--cream)">cookies técnicas</strong> (Google Fonts) para la correcta visualización de la web. No utilizamos cookies de seguimiento ni publicidad. <button data-modal="modal-cookies">Más información</button></p>
+  <div class="ck-banner-btns">
+    <button class="ck-reject" id="ckReject">Rechazar</button>
+    <button class="ck-accept" id="ckAccept">Aceptar</button>
+  </div>
+</div>
+
 <!-- MODAL: AVISO LEGAL -->
 <div class="legal-overlay" id="modal-aviso" role="dialog" aria-modal="true" aria-labelledby="av-title">
   <div class="legal-box">
@@ -939,6 +965,21 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 </div>
 
 <script>
+// Cookie banner
+(function(){
+  var banner=document.getElementById('ckBanner');
+  if(!localStorage.getItem('ck_consent')){
+    setTimeout(function(){banner.classList.add('visible');},600);
+  }
+  function dismiss(){banner.classList.remove('visible');}
+  document.getElementById('ckAccept').addEventListener('click',function(){
+    localStorage.setItem('ck_consent','accepted');dismiss();
+  });
+  document.getElementById('ckReject').addEventListener('click',function(){
+    localStorage.setItem('ck_consent','rejected');dismiss();
+  });
+})();
+
 // Legal modals
 (function(){
   document.querySelectorAll('[data-modal]').forEach(function(btn){
