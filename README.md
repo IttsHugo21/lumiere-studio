@@ -4,7 +4,7 @@ Landing page de lujo para un estudio de diseño web especializado en **clínicas
 
 ## ✨ Características
 
-- Diseño editorial premium (paleta verde / negro, tipografías serif + sans).
+- Diseño editorial premium (paleta dorado champán / negro, tipografías serif + sans).
 - Producto 3D en SVG con efecto de inclinación al mover el ratón.
 - Animaciones scroll-triggered (IntersectionObserver), parallax y contadores.
 - Secciones: hero, sobre el estudio, bio, servicios, proceso, portfolio, beneficios, testimonios, precios y contacto.
