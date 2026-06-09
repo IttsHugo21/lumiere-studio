@@ -293,9 +293,11 @@
 
   /* ── COMPROMISOS ── */
   #pledge{background:var(--noir-2);overflow:hidden}
-  .pl-slider{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;padding:8px 0 16px;margin-top:56px}
-  .pl-slider::-webkit-scrollbar{display:none}
-  .pl{min-width:400px;flex-shrink:0;border:1px solid var(--line);padding:44px 38px;position:relative;background:rgba(10,8,7,.4);transition:border-color .5s,transform .5s var(--ease)}
+  .pl-slider{overflow:hidden;padding:8px 0 24px;margin-top:56px;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+  .pl-track{display:flex;gap:24px;width:max-content;animation:plScroll 48s linear infinite;will-change:transform}
+  .pl-slider:hover .pl-track{animation-play-state:paused}
+  @keyframes plScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .pl{min-width:360px;max-width:360px;flex-shrink:0;border:1px solid var(--line);padding:40px 34px;position:relative;background:rgba(10,8,7,.4);transition:border-color .5s,transform .5s var(--ease)}
   .pl:hover{border-color:rgba(201,169,110,.4);transform:translateY(-6px)}
   .pl::before{content:'✦';position:absolute;top:30px;right:34px;color:rgba(201,169,110,.18);font-size:1.4rem}
   .pl p{font-family:var(--display);font-weight:300;font-style:italic;font-size:1.18rem;line-height:1.6;color:rgba(250,244,232,.86);margin-bottom:32px}
@@ -713,16 +715,27 @@
     <div class="eyebrow rv">Testimonios</div>
     <h2 class="h-display rv">Lo que dicen quienes<br>ya <em>dieron el paso</em></h2>
   </div>
-  <div class="wrap"><div class="pl-slider" id="plSlider">
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Venía quemada porque ya me habían fallado dos personas antes. Aquí el trato fue cercano desde el primer día y el resultado superó lo que tenía en la cabeza. Por fin una web que me representa.</p><div class="pl-by"><div class="pl-av">LM</div><div><div class="pl-nm">Laura M.</div><div class="pl-rl">Centro de estética · Valencia</div></div></div><span class="pl-tag">Diseño</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>A las dos semanas ya me llegaban mensajes pidiendo cita desde la web. Antes tenía una página que era prácticamente un folleto que no servía para nada.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Madrid</div></div></div><span class="pl-tag">Resultados</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Lo que más valoré es que entendían el sector. No tuve que explicar qué es un tratamiento de ácido hialurónico ni por qué las fotos importan tanto en estética.</p><div class="pl-by"><div class="pl-av">NR</div><div><div class="pl-nm">Natalia R.</div><div class="pl-rl">Clínica estética · Sevilla</div></div></div><span class="pl-tag">Especialización</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Cumplieron los plazos a rajatabla. Me dijeron una semana y en una semana estaba online, sin excusas ni largas. Eso en este mundillo se agradece muchísimo.</p><div class="pl-by"><div class="pl-av">CR</div><div><div class="pl-nm">Carlos R.</div><div class="pl-rl">Centro de depilación láser · Málaga</div></div></div><span class="pl-tag">Rapidez</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Tenía miedo de acabar con una web de plantilla como todas. Para nada: parece hecha a mano, con muchísimo gusto. Varias clientas me han preguntado quién me la hizo.</p><div class="pl-by"><div class="pl-av">IF</div><div><div class="pl-nm">Inés F.</div><div class="pl-rl">Centro de belleza · Bilbao</div></div></div><span class="pl-tag">Diseño</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>El sistema de reservas me ha quitado un montón de llamadas. La gente reserva sola, recibe su confirmación y yo me dedico a lo importante, que es atender.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Responsable de spa</div><div class="pl-rl">Spa urbano · Barcelona</div></div></div><span class="pl-tag">Reservas</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Me reescribieron todos los textos y se nota: ahora la web habla como hablo yo con mis pacientes, no como un manual. Suena natural y cercano.</p><div class="pl-by"><div class="pl-av">ML</div><div><div class="pl-nm">Marta L.</div><div class="pl-rl">Clínica dermatológica · Zaragoza</div></div></div><span class="pl-tag">Copywriting</span></div>
-    <div class="pl"><div class="pl-stars">★★★★★</div><p>Que no pagas hasta aprobar el diseño me dio la tranquilidad que necesitaba para arriesgarme. Acerté de lleno. Repetiré sin dudarlo cuando abramos el segundo centro.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Alicante</div></div></div><span class="pl-tag">Confianza</span></div>
-  </div></div>
+  <div class="pl-slider" id="plSlider">
+    <div class="pl-track">
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Venía quemada porque ya me habían fallado dos personas antes. Aquí el trato fue cercano desde el primer día y el resultado superó lo que tenía en la cabeza. Por fin una web que me representa.</p><div class="pl-by"><div class="pl-av">LM</div><div><div class="pl-nm">Laura M.</div><div class="pl-rl">Centro de estética · Valencia</div></div></div><span class="pl-tag">Diseño</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>A las dos semanas ya me llegaban mensajes pidiendo cita desde la web. Antes tenía una página que era prácticamente un folleto que no servía para nada.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Madrid</div></div></div><span class="pl-tag">Resultados</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Lo que más valoré es que entendían el sector. No tuve que explicar qué es un tratamiento de ácido hialurónico ni por qué las fotos importan tanto en estética.</p><div class="pl-by"><div class="pl-av">NR</div><div><div class="pl-nm">Natalia R.</div><div class="pl-rl">Clínica estética · Sevilla</div></div></div><span class="pl-tag">Especialización</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Cumplieron los plazos a rajatabla. Me dijeron una semana y en una semana estaba online, sin excusas ni largas. Eso en este mundillo se agradece muchísimo.</p><div class="pl-by"><div class="pl-av">CR</div><div><div class="pl-nm">Carlos R.</div><div class="pl-rl">Centro de depilación láser · Málaga</div></div></div><span class="pl-tag">Rapidez</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Tenía miedo de acabar con una web de plantilla como todas. Para nada: parece hecha a mano, con muchísimo gusto. Varias clientas me han preguntado quién me la hizo.</p><div class="pl-by"><div class="pl-av">IF</div><div><div class="pl-nm">Inés F.</div><div class="pl-rl">Centro de belleza · Bilbao</div></div></div><span class="pl-tag">Diseño</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>El sistema de reservas me ha quitado un montón de llamadas. La gente reserva sola, recibe su confirmación y yo me dedico a lo importante, que es atender.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Responsable de spa</div><div class="pl-rl">Spa urbano · Barcelona</div></div></div><span class="pl-tag">Reservas</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Me reescribieron todos los textos y se nota: ahora la web habla como hablo yo con mis pacientes, no como un manual. Suena natural y cercano.</p><div class="pl-by"><div class="pl-av">ML</div><div><div class="pl-nm">Marta L.</div><div class="pl-rl">Clínica dermatológica · Zaragoza</div></div></div><span class="pl-tag">Copywriting</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Que no pagas hasta aprobar el diseño me dio la tranquilidad que necesitaba para arriesgarme. Acerté de lleno. Repetiré sin dudarlo cuando abramos el segundo centro.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Alicante</div></div></div><span class="pl-tag">Confianza</span></div>
+      <!-- duplicado para loop infinito -->
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Venía quemada porque ya me habían fallado dos personas antes. Aquí el trato fue cercano desde el primer día y el resultado superó lo que tenía en la cabeza. Por fin una web que me representa.</p><div class="pl-by"><div class="pl-av">LM</div><div><div class="pl-nm">Laura M.</div><div class="pl-rl">Centro de estética · Valencia</div></div></div><span class="pl-tag">Diseño</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>A las dos semanas ya me llegaban mensajes pidiendo cita desde la web. Antes tenía una página que era prácticamente un folleto que no servía para nada.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Madrid</div></div></div><span class="pl-tag">Resultados</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Lo que más valoré es que entendían el sector. No tuve que explicar qué es un tratamiento de ácido hialurónico ni por qué las fotos importan tanto en estética.</p><div class="pl-by"><div class="pl-av">NR</div><div><div class="pl-nm">Natalia R.</div><div class="pl-rl">Clínica estética · Sevilla</div></div></div><span class="pl-tag">Especialización</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Cumplieron los plazos a rajatabla. Me dijeron una semana y en una semana estaba online, sin excusas ni largas. Eso en este mundillo se agradece muchísimo.</p><div class="pl-by"><div class="pl-av">CR</div><div><div class="pl-nm">Carlos R.</div><div class="pl-rl">Centro de depilación láser · Málaga</div></div></div><span class="pl-tag">Rapidez</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Tenía miedo de acabar con una web de plantilla como todas. Para nada: parece hecha a mano, con muchísimo gusto. Varias clientas me han preguntado quién me la hizo.</p><div class="pl-by"><div class="pl-av">IF</div><div><div class="pl-nm">Inés F.</div><div class="pl-rl">Centro de belleza · Bilbao</div></div></div><span class="pl-tag">Diseño</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>El sistema de reservas me ha quitado un montón de llamadas. La gente reserva sola, recibe su confirmación y yo me dedico a lo importante, que es atender.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Responsable de spa</div><div class="pl-rl">Spa urbano · Barcelona</div></div></div><span class="pl-tag">Reservas</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Me reescribieron todos los textos y se nota: ahora la web habla como hablo yo con mis pacientes, no como un manual. Suena natural y cercano.</p><div class="pl-by"><div class="pl-av">ML</div><div><div class="pl-nm">Marta L.</div><div class="pl-rl">Clínica dermatológica · Zaragoza</div></div></div><span class="pl-tag">Copywriting</span></div>
+      <div class="pl"><div class="pl-stars">★★★★★</div><p>Que no pagas hasta aprobar el diseño me dio la tranquilidad que necesitaba para arriesgarme. Acerté de lleno. Repetiré sin dudarlo cuando abramos el segundo centro.</p><div class="pl-by"><div class="pl-av">★</div><div><div class="pl-nm">Propietaria de clínica</div><div class="pl-rl">Medicina estética · Alicante</div></div></div><span class="pl-tag">Confianza</span></div>
+    </div>
+  </div>
 </section>
 
 <!-- PRICING -->
@@ -850,13 +863,6 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
     p.style.transform=`rotateY(${cx*12}deg) rotateX(${-cy*8}deg) translate(${cx*12}px,${Math.sin(tm)*14}px)`;})();
 })();
 
-// pledge drag-scroll
-(function(){
-  const s=document.getElementById('plSlider');if(!s)return;let d=false,sx,sl;
-  s.addEventListener('pointerdown',e=>{d=true;sx=e.pageX;sl=s.scrollLeft;s.style.cursor='grabbing';});
-  addEventListener('pointerup',()=>{d=false;s.style.cursor='';});
-  s.addEventListener('pointermove',e=>{if(!d)return;s.scrollLeft=sl-(e.pageX-sx);});
-})();
 
 // lead form → WhatsApp
 (function(){
