@@ -44,14 +44,16 @@
       radial-gradient(50vw 50vw at -10% 30%, rgba(154,123,62,0.10), transparent 60%),
       radial-gradient(45vw 45vw at 110% 80%, rgba(232,213,163,0.08), transparent 60%),
       var(--noir);
+    will-change:transform;transform:translateZ(0);
   }
   .grain{
     position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:0.05;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    will-change:transform;transform:translateZ(0);
   }
 
   /* ── SCROLL PROGRESS ── */
-  .progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));z-index:10000}
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));z-index:10000;transform-origin:left;transform:scaleX(0);will-change:transform;}
 
   /* ── NAV ── */
   nav{
@@ -164,7 +166,7 @@
 
   /* ── MARQUEE ── */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--noir-2);padding:22px 0}
-  .marquee-track{display:flex;gap:60px;width:max-content;animation:marq 28s linear infinite}
+  .marquee-track{display:flex;gap:60px;width:max-content;animation:marq 28s linear infinite;will-change:transform}
   .marquee:hover .marquee-track{animation-play-state:paused}
   .marquee-track span{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--gold-light);white-space:nowrap;display:flex;align-items:center;gap:60px;opacity:.85}
   .marquee-track span::after{content:'✦';color:var(--gold-deep);font-style:normal;font-size:.8rem}
@@ -180,7 +182,8 @@
   @media(max-width:760px){.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
 
   /* ── SECTION SHELL ── */
-  section{position:relative;padding:clamp(90px,12vh,150px) 0}
+  section{position:relative;padding:clamp(90px,12vh,150px) 0;contain:layout style}
+  #bio,#services,#portfolio,#process,#pricing,#about{content-visibility:auto;contain-intrinsic-size:0 600px}
   #bio,#services,#portfolio,#process,#pricing{scroll-margin-top:84px}
   .section-head{position:relative;z-index:1}
 
@@ -347,9 +350,9 @@
   .ft-c .ct{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 
   /* ── REVEAL ── */
-  .rv{opacity:0;transform:translateY(42px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-  .rv.in{opacity:1;transform:none}
-  .rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .rv{opacity:0;transform:translateY(42px);transition:opacity 1s var(--ease),transform 1s var(--ease);will-change:opacity,transform}
+  .rv.in{opacity:1;transform:none;will-change:auto}
+  .rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1s var(--ease),transform 1s var(--ease);will-change:opacity,transform}
   .rv-l.in{opacity:1;transform:none}
   .rv-r{opacity:0;transform:translateX(44px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
   .rv-r.in{opacity:1;transform:none}
@@ -398,6 +401,7 @@
     box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.5);
     text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s;
     animation:waPulse 2.6s ease-out infinite;
+    will-change:transform;transform:translateZ(0);
   }
   .wa-float:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.5)}
   .wa-float svg{width:32px;height:32px}
@@ -810,12 +814,17 @@
 </footer>
 
 <script>
-// nav scrolled + progress bar
+// nav scrolled + progress bar (rAF-throttled)
 const nav=document.getElementById('nav'),bar=document.getElementById('progress');
+let rafPending=false;
 window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',scrollY>50);
-  const h=document.documentElement.scrollHeight-innerHeight;
-  bar.style.width=(scrollY/h*100)+'%';
+  if(rafPending)return;rafPending=true;
+  requestAnimationFrame(()=>{
+    rafPending=false;
+    nav.classList.toggle('scrolled',scrollY>50);
+    const h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(scrollY/h)+')';
+  });
 },{passive:true});
 
 // reveal
